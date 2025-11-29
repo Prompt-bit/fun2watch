@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='FUN2WATCH.ico') }}">
+    <title>Fun2Watch - How To Create A Song</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        video {
+            border: 3px solid #444;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 5px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" width="645" height="465" poster="{{ url_for('static', filename='How to Create A Song.webp') }}">
+        <source src="{{ url_for('static', filename='vid1.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div>
+        <button id="play">▶ Play</button>
+        <button id="pause">⏸ Pause</button>
+    </div>
+    <h2>How to Create A Song</h2>
+    <p>PARTNER: prime-phatin</p>
+
+    <script>
+        const video = document.getElementById("video");
+        const play = document.getElementById("play");
+        const pause = document.getElementById("pause");
+
+        play.addEventListener("click", () => video.play());
+        pause.addEventListener("click", () => video.pause());
+    </script>
+</body>
+</html>
